@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="24c50cd2-626c-4708-bf29-754296960b71" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/_footer.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/_footer.blade.php" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/_header.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/_header.blade.php" />
-    </list>
+    <list default="true" id="24c50cd2-626c-4708-bf29-754296960b71" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -351,12 +348,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1549951243922</updated>
-      <workItem from="1549951245267" duration="5103000" />
+      <workItem from="1549951245267" duration="5703000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5103000" />
+    <option name="totallyTimeSpent" value="5703000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="199" y="6" width="1640" height="1019" extended-state="0" />
