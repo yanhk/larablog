@@ -7,15 +7,28 @@ use Illuminate\Http\Request;
 
 class UsersController extends Controller
 {
+    //用户信息展示
+    public function show(User $user)
+    {
+        return view('users.show', compact('user'));
+    }
+
     //用户注册页面
     public function create()
     {
         return view('users.create');
     }
 
-    //用户信息展示
-    public function show(User $user)
+    //用户注册表单提交
+    public function store(Request $request)
     {
-        return view('users.show', compact('user'));
+        $this->validate($request, [
+            'name'=>'required|max:50',
+            'email'=>'required|email|unique:user|max:191',
+            'password'=>'required|confirmed|min:6'
+        ]);
+        return ;
     }
+
+
 }
