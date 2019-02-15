@@ -22,12 +22,22 @@ class UsersController extends Controller
     //用户注册表单提交
     public function store(Request $request)
     {
+//        dd($request->all());
         $this->validate($request, [
             'name'=>'required|max:50',
-            'email'=>'required|email|unique:user|max:191',
+            'email'=>'required|email|unique:users|max:191',
             'password'=>'required|confirmed|min:6'
         ]);
-        return ;
+
+
+        $user = User::create([
+            'name'=>$request->name,
+            'email'=>$request->email,
+            'password'=>bcrypt($request->password)
+        ]);
+
+        session()->flash('success', '欢迎，您将在这里开启一段新的旅程~');
+        return redirect()->route('users.show', [$user]);
     }
 
 
