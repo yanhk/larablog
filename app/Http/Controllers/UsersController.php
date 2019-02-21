@@ -8,6 +8,18 @@ use Illuminate\Support\Facades\Auth;
 
 class UsersController extends Controller
 {
+    public function __construct()
+    {
+        //除了此处指定的动作以外，所有其他动作都必须登录用户才能访问
+        $this->middleware('auth', [
+            'except' => ['create', 'store']
+        ]);
+        //只允许登录用户访问之外
+        $this->middleware('guest', [
+            'only' => ['create']
+        ]);
+    }
+    
     //用户信息展示
     public function show(User $user)
     {
@@ -46,12 +58,15 @@ class UsersController extends Controller
     //用户修改界面
     public function edit(User $user)
     {
+        $this->authorize('update', $user);
         return view('users.edit', compact('user'));
     }
 
     //用户修改提交 PATCH
     public function update(User $user, Request $request)
     {
+        $this->authorize('update', $user);
+
         $this->validate($request, [
             'name' => 'required|max:50',
             'password' => 'required|confirmed|min:6'
