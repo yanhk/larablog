@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="24c50cd2-626c-4708-bf29-754296960b71" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UsersController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/UsersController.php" />
-      <change beforePath="$PROJECT_DIR$/app/Policies/UsersPolicy.php" afterPath="$PROJECT_DIR$/app/Policies/UsersPolicy.php" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" />
-      <change beforePath="$PROJECT_DIR$/resources/views/users/_user.blade.php" afterPath="$PROJECT_DIR$/resources/views/users/_user.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,8 +22,8 @@
       <file leaf-file-name="UsersController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UsersController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="840">
-              <caret line="37" column="22" lean-forward="false" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
+            <state relative-caret-position="600">
+              <caret line="36" column="24" lean-forward="true" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -383,12 +380,12 @@
       <workItem from="1550452350677" duration="93000" />
       <workItem from="1550729622551" duration="5969000" />
       <workItem from="1550797446579" duration="584000" />
-      <workItem from="1551147199053" duration="6751000" />
+      <workItem from="1551147199053" duration="7228000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42524000" />
+    <option name="totallyTimeSpent" value="43001000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="652" y="17" width="1764" height="1019" extended-state="0" />
@@ -802,8 +799,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UsersController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="37" column="22" lean-forward="false" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
+        <state relative-caret-position="600">
+          <caret line="36" column="24" lean-forward="true" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="24" />
           <folding />
         </state>
       </provider>
