@@ -10,14 +10,24 @@ class UsersController extends Controller
 {
     public function __construct()
     {
-        //除了此处指定的动作以外，所有其他动作都必须登录用户才能访问
+        //除此之外 其他页面需要登录可访问
         $this->middleware('auth', [
-            'except' => ['create', 'store']
+            'except' => ['show', 'create', 'store', 'index']
         ]);
-        //只允许登录用户访问之外
+
+        //未登录可访问
         $this->middleware('guest', [
             'only' => ['create']
         ]);
+
+    }
+    
+    //所有用户列表
+    public function index()
+    {
+//        $users = User::all();
+        $users = User::paginate(10);
+        return view('users.index', compact('users'));
     }
     
     //用户信息展示
