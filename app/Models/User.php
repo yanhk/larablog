@@ -50,11 +50,52 @@ class User extends Authenticatable
     //一人可拥有多条微博
     public function statuses()
     {
-        return $this->hasMany(Status::class);
+        return $this->hasMany(Status::class, 'user_id', 'id');
     }
 
     public function feed()
     {
         return $this->statuses()->orderBy('created_at', 'desc');
     }
+
+    //获取粉丝关系列
+    //多对多
+//    $this->belongsToMany(关联的模型类名, 中间表表名,
+//    当前模型在中间模型中的外键名称, 关联模型在中间模型的外键名称);
+    //用户拥有的所有粉丝 (我关注了谁)
+    public function followers()
+    {
+        return $this->belongsToMany(User::class, 'followers', 'user_id', 'follower_id');
+    }
+
+    //谁关注了我
+    public function followings()
+    {
+        return $this->belongsToMany(User::Class, 'followers', 'follower_id', 'user_id');
+    }
+
+    //关注用户
+    public function follow($user_ids)
+    {
+        if(!is_array($user_ids)){
+            $user_ids = compact('user_ids');
+        }
+        $this->followings()->sync($user_ids, false);
+    }
+
+    //取消关注用户
+    public function unfollow($user_ids)
+    {
+        if(!is_array($user_ids)){
+            $user_ids = compact('user_ids');
+        }
+        $this->followings()->detach($user_ids);
+    }
+
+    //是否关注
+    public function isFollowing($user_id)
+    {
+        return $this->followings->contains($user_id);
+    }
+
 }
