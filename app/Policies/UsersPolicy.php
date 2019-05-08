@@ -30,4 +30,10 @@ class UsersPolicy
     {
         return $loginUser->is_admin && $loginUser->id !== $user->id;
     }
+
+    //自己不能关注自己。故新增授权策略方法取名 follow()：
+    public function follow(User $currentUser, User $user)
+    {
+        return $currentUser->id !== $user->id;
+    }
 }
