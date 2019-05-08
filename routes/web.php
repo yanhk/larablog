@@ -48,6 +48,8 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('passw
 //微博相关操作
 Route::resource('statuses', 'StatusesController', ['only' => ['store', 'destroy']]);
 
-
+//谁关注了我 我关注了谁
+Route::get('/users/{user}/followers', 'UsersController@followers')->name('users.followers');
+Route::get('/users/{user}/followings', 'UsersController@followings')->name('users.followings');
 
 
